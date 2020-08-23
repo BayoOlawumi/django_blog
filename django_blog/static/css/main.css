@@ -1,0 +1,184 @@
+
+/* This is the style for the nav header */
+
+:root{
+    --hovercolor: hsl(170, 42%, 31%);
+    --sitecolor: hsl(170, 50%, 10%);
+    --accentcolor: white;
+    --standardfont:Arial, Helvetica, sans-serif;
+}
+body, html{
+    padding:0;
+    margin:0;
+    font-family: var(--standardfont);
+    position: relative;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.page-content{
+    display: block;
+    flex: 1 0 auto;
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 100px;
+}
+header{
+    width: 100%;
+    height :20vh; 
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+.page-header{
+    font-weight: bolder;
+    padding: 10px;
+    margin: auto;
+    text-align: center;
+}
+nav{
+    width: 100%;
+    background-color: var(--hovercolor);
+    height:30%;
+    margin: 0;
+}
+ul{
+    
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+   
+}
+li{
+  
+    font-weight: bold;
+    background-color: var(--hovercolor);
+    align-items: center;
+    align-self: center;
+}
+li a{
+    color:var(--accentcolor);
+    font-size: medium;
+    text-align: center;
+    text-decoration: none;
+    padding: 1px 15px 1px 15px;
+    border-radius: 10px;
+    align-self: center;
+}
+li a:hover{
+    
+    color:azure;
+    animation-name: li-hover;
+    animation-duration: 1.6s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+@keyframes li-hover{
+    100%{
+    background-color:var(--sitecolor);  
+    }
+}
+.logo-area{
+    background-color:  hsl(170, 50%, 10%);
+    width: 100%;
+    height: 70%;
+}
+#temp-logo{
+    background-color: white;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    animation: templogo 700ms ease-in 100ms infinite alternate-reverse forwards;
+}
+@keyframes templogo{
+    20% {
+        transform: scale(0.5);
+        opacity: 0.5;
+    }
+}
+#site-name{
+    margin:auto;
+    color:azure;
+    font-size: x-large;
+    padding: 12px;
+    text-shadow: 0 5px 8px var(--hovercolor), 0 6px 6px var(--sitecolor);
+}
+#site-name:hover{
+    animation-name: site-name;
+    animation-duration: 2s;
+    animation-timing-function:ease-in;
+}
+@keyframes site-name{
+    0%{
+        color: var(--sitecolor);
+    }
+    50%{
+        color: var(--hovercolor);
+    }
+}
+
+
+
+
+/* This is the index CSS props */
+#details{
+    --hovercolor: hsl(170, 50%, 30%,);
+    --sitecolor: hsl(170, 50%, 10%);
+    align-content: center;
+    background-color: cadetblue;
+}
+#detail:hover{
+    animation-name: content-area;
+    animation-duration: 3s;
+    animation-timing-function:ease-in;
+}
+@keyframes content-name{
+    0%{
+        background-color: var(--sitecolor);
+    }
+    100%{
+        background-color: var(--hovercolor);
+    }
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+.img-container{
+    margin-top: 1em;
+    background-color: azure;
+    padding: 10vh;
+}
+.img-container p{
+    color:var(--sitecolor);
+
+}
+.img-container img{
+    width: 500px;
+    height: 500px;
+}
+
+
+
+
+
+
+
+/*************Footer ************************/
+footer p{
+    text-align: center;
+   
+}
+footer{
+    width: 100%;
+    bottom: 0px;
+    position: fixed;
+    max-height: fit-content;
+}
+footer .copyright-section{
+    background-color: black;
+    opacity:0.7;
+    color:white;
+    padding: 0.4em 0;
+}

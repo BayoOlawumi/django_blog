@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block head_css %}
+        <link rel="stylesheet" href="{% static '/css/main.css' %}" type="text/css">
+    {% endblock head_css %}
+   
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+</head>
+<body>
+    
+    <header>
+        <!--The main header for the website-->
+        {% include "nav.html" %}
+    </header>
+
+    <div class="whole-page">
+        <header class="page-header">
+            {% block header %}
+            {% endblock %}
+        </header>
+        <div class="page-content">
+            <!--This is the main content of the website-->
+            {% block pagecontent %}
+            {% endblock %}
+        </div>
+    
+        <footer>
+            <!--This is the footer of the website-->
+            {% block footer %}
+            {% endblock %}
+           
+            <div class="copyright-section">
+                <hr>
+                <p>Copyright eBayo's Corner</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

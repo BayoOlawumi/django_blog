@@ -1,0 +1,108 @@
+/*********** Project html ********/
+#project-area{
+    display:flex;
+    background-color: transparent;
+    /*grid-template-columns: 70% 30%;*/
+    flex-direction: row;
+    margin: auto;
+   
+}
+
+.projects-container{
+    display:grid;
+    position: relative;
+    height: 45vh;
+    grid-template-columns: 1fr 2.5fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "introtext pastprojects searchprojects";
+}
+
+@media (max-width:600px){
+    .projects-container{
+        grid-template-rows: auto auto auto;
+        grid-template-columns: auto;
+        grid-template-areas: 
+        "introtext"
+        "pastprojects"
+        "searchprojects";
+    }
+}
+.intro-section{
+    grid-area: introtext;
+    justify-items: start;
+    
+}
+
+.intro-section p{
+    font-size: 1.2em;
+    padding: 0.4em;
+}
+
+.finished-projects-display{
+    background-color: white; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-area: pastprojects;
+    font-size: 1.5rem;
+    
+}
+.finished-projects-container{
+    background-color: white; 
+    padding: 5px;
+    color: azure;
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(autofill,minmax(60px, 1fr));
+    grid-gap: 0.1em 0.6em;
+    
+}
+
+.projects p{
+    margin: auto;
+    padding: 15px 10px 0 0;
+    text-align: center;
+    font-size: 1.4rem;
+    width: 100%;
+}
+.search-projects{
+    background-color: transparent; 
+    flex:1 1.7;
+    margin: 2em 1em 2em 2em;
+    grid-area: searchprojects;
+}
+
+.projects{
+    padding: 0.7em 0.5em;
+    background-color: darkcyan ;
+    opacity: 0.6;
+    height: 2em;
+    justify-self:center;
+    align-items: center;
+    font-size: 1em;
+    border-radius: 5px;
+}
+.projects:hover{
+    opacity: 1;
+}
+
+#project-area a {
+    text-decoration:none;
+    color: white;
+}
+
+
+#content-area:hover{
+    animation-name: content-area;
+    animation-duration: 3s;
+    animation-timing-function:ease-in;
+}
+@keyframes content-name{
+    0%{
+        background-color: palegoldenrod;
+    }
+    100%{
+        background-color: palegreen;
+    }
+}

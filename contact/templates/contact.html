@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head_css %}
+    <link rel="stylesheet" href="{% static '/css/main.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static '/css/contact.css' %}" type="text/css">
+{% endblock head_css %}
+
+{% block title %}
+    eBayo.com | contact
+{% endblock %}
+
+{% block header %}
+    <h5>Contact eBayo</h5>
+{% endblock %}
+
+{% block pagecontent %}
+    <h4>Contact Form</h4>
+    <form action="." method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table}}
+        </table>
+        <p><input type="submit" value="Submit"></p>
+    </form>
+{% endblock %}

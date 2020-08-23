@@ -1,0 +1,18 @@
+{% extends 'admin/change_list.html' %}
+
+{% block object-tools %}
+<form  method="POST" id="default-about-form">
+    {% csrf_token %}
+    <input type="text" name="defaultabout" class="vTextField">
+    <button type="submit" class="button">Set Default About</button>
+</form>
+<script>
+    let defaultAboutForm = document.querySelector('#default-about-form')
+    defaultAboutForm.querySelector('input[name="defaultabout"]').addEventListener('change', function(e){
+        let defaultAbout = e.target.value
+        defaultAboutForm.action = 'defaultabout/' + defaultAbout +'/'
+    })
+</script>
+{{ block.super}}
+
+{%endblock object-tools%}
