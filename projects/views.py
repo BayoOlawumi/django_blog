@@ -6,8 +6,8 @@ from django.db.models import Q
 from .models import Project, Developer
 
 # Create your views here.
-def real_index(request):
-    return render(request, 'real_index.html')
+def my_index(request):
+    return render(request, 'my_index.html')
 
 def index(request):
     return render(request, 'index.html')

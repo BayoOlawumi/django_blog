@@ -2,6 +2,12 @@
 {% load static %}
 
 {% block head_css %}
+    <link href="{% static 'vendor/fontawesome-free/css/all.min.css'%}" rel="stylesheet" type="text/css">
+    <link href="{% static 'https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="{% static 'css/sb-admin-2.min.css' %}" rel="stylesheet">
+
     <link rel="stylesheet" href="{% static '/css/main.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static '/css/projects.css' %}" type="text/css">
 {% endblock head_css %}
@@ -12,9 +18,9 @@
 <h5>Projects</h5>
 {% endblock%}
 {% block pagecontent %}
-    <section id="project-area">          
-                <div class="projects-container">
-                    <div class="intro-section">
+    <section id="container">          
+                <div class="row">
+                    <div class="col-lg-3">
                         <p>
                         Nor is there anyone who loves or pursues 
                         or desires to obtain pain of itself,
@@ -23,7 +29,7 @@
                          pain can procure him some great pleasure.
                       </p>
                     </div>
-                    <div class="finished-projects-display">
+                    <div class="col-lg-6">
                         <p>Finished Projects</p> 
                         <div class="finished-projects-container">
                             {% for each_project in projects %}
@@ -37,7 +43,7 @@
                             {% endfor%}
                     </div>
                     </div>
-                    <div class="search-projects">
+                    <div class="col-lg-1">
                         <h4>Search Projects</h4>
                         <form action="/projects/list/search/" method="GET">
                             <label for="q">search</label>
@@ -66,7 +72,5 @@
 {% endblock %}
 
 {% block footer%}
-    <h5 id="ty">
-        We rule in our world
-    </h5>
+ 
 {% endblock %}

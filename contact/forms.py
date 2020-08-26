@@ -1,11 +1,12 @@
-from django import forms as forms
+from django import forms 
+from . import models
 
 TOPIC_CHOICES = (
     ('general', 'General enquiry'),
     ('bug', 'Bug report'),
     ('suggestion', 'Suggestion'),
 )
-class ContactForm(forms.Form):
+"""class ContactForm(forms.Form):
     topic = forms.ChoiceField(choices=TOPIC_CHOICES)
     message = forms.CharField(
         widget= forms.Textarea(),
@@ -18,5 +19,10 @@ class ContactForm(forms.Form):
         num_words = len(message.split())
         if num_words < 15:
             raise forms.ValidationError("Number of words entered is not enough")
-        return message
+        return message"""
+
+class ContactForm(forms.ModelForm):
+    class Meta:
+        model = models.Contact
+        fields = "__all__"
         

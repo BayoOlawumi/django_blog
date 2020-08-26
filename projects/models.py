@@ -17,12 +17,18 @@ class Project(models.Model):
     """
 
 class Developer(models.Model):
+    SPECIALITY = (
+        ('Full-Stack', 'FullStack'),
+        ('Back-End', 'Backend'),
+        ('Front-End', 'Frontend'),
+        ('UI/UX', 'UI/UX')
+    )
     projects = models.ManyToManyField(Project)
     surname = models.CharField(max_length=50)
     othernames = models.CharField(max_length=50)
     email = models.EmailField()
     headshot = models.ImageField(upload_to='developers')
-    role = models.CharField(max_length=50)
+    role = models.CharField(max_length=50, choices = SPECIALITY)
 
     def __str__(self):
         return self.surname + " " + self.othernames
