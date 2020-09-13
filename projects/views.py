@@ -8,7 +8,7 @@ from .models import Project, Developer
 # Create your views here.
 def my_index(request):
     return render(request, 'my_index.html')
-
+    #testing git
 def index(request):
     return render(request, 'index.html')
 
